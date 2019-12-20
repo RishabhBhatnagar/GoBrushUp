@@ -9,9 +9,9 @@ type stack struct {
 }
 
 func (st *stack) pop() int {
-	if st.top < 1
+	if st.top < 1 {
 		panic("StackUnderflow error: Can't pop from an empty stack")
-	else {
+	} else {
 		stTopValue := st.arr[st.top-1] // since array index started from 0
 		st.top--
 		return stTopValue
