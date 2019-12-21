@@ -1,6 +1,6 @@
 // 1) Array Implementation of Stack.
 
-package main
+package data_structures
 
 type stack struct {
 	top       int
@@ -12,7 +12,7 @@ func (st *stack) pop() int {
 	if st.top < 1 {
 		panic("StackUnderflow error: Can't pop from an empty stack")
 	} else {
-		stTopValue := st.arr[st.top-1] // since array index started from 0
+		stTopValue := st.arr[st.top - 1] // since array index started from 0
 		st.top--
 		return stTopValue
 	}
@@ -27,8 +27,10 @@ func (st *stack) push(element int) {
 	}
 }
 
-func main() {
-	st := stack{stackSize: 10}
-	st.push(23)
-	st.pop() // returns 23.
+func (st *stack) peek() int{
+	if st.top < 1 {
+		panic("EmptyStack: cannot peek on an empty stack")
+	}
+	return st.arr[st.top - 1]
 }
+
