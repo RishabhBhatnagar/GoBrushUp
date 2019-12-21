@@ -27,10 +27,13 @@ func (st *stack) push(element int) {
 	}
 }
 
-func (st *stack) peek() int{
+func (st *stack) peek() int {
 	if st.top < 1 {
 		panic("EmptyStack: cannot peek on an empty stack")
 	}
 	return st.arr[st.top - 1]
 }
 
+func (st *stack) isEmpty() bool {
+	return st.top < 1
+}
